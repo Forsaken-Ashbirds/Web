@@ -336,12 +336,6 @@ dist
 #
 # Recommended template: Node.gitignore
 
-# TODO: where does this rule come from?
-docs/_book
-
-# TODO: where does this rule come from?
-test/
-
 ### Vuejs ###
 # Recommended template: Node.gitignore
 
@@ -623,8 +617,6 @@ ServiceFabricBackup/
 *.bim_*.settings
 *.rptproj.rsuser
 *- [Bb]ackup.rdl
-*- [Bb]ackup ([0-9]).rdl
-*- [Bb]ackup ([0-9][0-9]).rdl
 
 # Microsoft Fakes
 FakesAssemblies/
@@ -745,3 +737,4 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,node,intellij,vue,vuejs,intellij+all
 
 package-lock.json
+.quasar/
