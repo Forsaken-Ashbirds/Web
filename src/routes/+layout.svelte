@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+
 </script>
 
 <div class="app">
@@ -11,7 +12,8 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>besuche <a href="ts3server://forsaken-ashbirds">forsaken-ashbirds</a> um unserem TeamSpeak Sever beizutreten</p>
+		<span>© {new Date().getFullYear().toString()} Forsaken Ashbirds | <a href="/impressum">Impressum</a></span>
 	</footer>
 </div>
 

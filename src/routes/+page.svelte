@@ -16,7 +16,7 @@
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
-		Welcome to SvelteKit!
+		Willkommen auf bei den Forsaken Ashbirds!
 	</h1>
 </section>
 
@@ -26,19 +26,21 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex: 0.6;
+		flex: 0.75;
 	}
 
 	h1 {
 		width: 100%;
+		text-align: center;
 	}
 
+
 	.welcome {
-		display: block;
+		display: flex;
 		position: relative;
 		width: auto;
 		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+		padding: 0 0 calc(130% * 495 / 2048) 0;
 
 		img {
 			position: absolute;
