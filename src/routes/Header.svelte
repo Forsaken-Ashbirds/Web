@@ -6,7 +6,7 @@
 
 <header>
 	<div class="corner">
-		<img src={logo} alt="Logo" />
+		<a href="./"><img src={logo} alt="Logo" /></a>
 	</div>
 
 	<nav>
@@ -18,7 +18,7 @@
 				<a href="/">Home</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+				<a href="/about">Über uns</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/impressum' ? 'page' : undefined}>
 				<a href="/impressum">Impressum</a>
@@ -30,35 +30,38 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
+		<a href="https://github.com/JosunLP/ForsakenAshbirds">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
 </header>
 
-<style>
+<style lang="scss">
 	header {
 		display: flex;
 		justify-content: space-between;
+		position: fixed;
+		width: 100%;
 	}
 
 	.corner {
 		width: 3em;
 		height: 3em;
-	}
+		padding: 1em;
 
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+		}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
+		img {
+			width: 4em;
+			height: 4em;
+			object-fit: contain;
+		}
 	}
 
 	nav {

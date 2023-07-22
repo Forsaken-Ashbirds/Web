@@ -1,10 +1,32 @@
-<script>
+<script lang="ts">
+	import { Theme } from '../enums/theme.enum';
 	import Header from './Header.svelte';
 	import './styles.css';
 
+	export let theme: Theme = Theme.DARK;
+
+	const toggleTheme = () => {
+		if (theme === Theme.DARK) {
+			theme = Theme.LIGHT;
+		} else {
+			theme = Theme.DARK;
+		}
+	};
+
+	const firstLetterToUpperCase = (str: string) => {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+	};
+
+	const setMoonOrSun = (theme: Theme) => {
+		if (theme === Theme.DARK) {
+			return '🌙';
+		} else {
+			return '☀️';
+		}
+	};
 </script>
 
-<div class="app">
+<div class="app {theme}">
 	<Header />
 
 	<main>
@@ -12,44 +34,19 @@
 	</main>
 
 	<footer>
-		<p>besuche <a href="ts3server://forsaken-ashbirds">forsaken-ashbirds</a> um unserem TeamSpeak Sever beizutreten</p>
-		<span>© {new Date().getFullYear().toString()} Forsaken Ashbirds | <a href="/impressum">Impressum</a></span>
+		<p>
+			besuche <a href="ts3server://forsaken-ashbirds">forsaken-ashbirds</a> um unserem TeamSpeak Sever
+			beizutreten
+		</p>
+		<span
+			>© {new Date().getFullYear().toString()} Forsaken Ashbirds |
+			<a href="/impressum">Impressum</a>
+			| <button on:click={toggleTheme}>{setMoonOrSun(theme)}</button></span
+		>
 	</footer>
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
+<style lang="scss">
+	@import '../style/main';
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>
