@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from './Header.svelte';
-	import './styles.css';
+	import '../style/styles.scss';
+	import '../style/main.scss';
 </script>
 
 <div class="app">
@@ -21,7 +22,3 @@
 		>
 	</footer>
 </div>
-
-<style lang="scss">
-	@import '../style/main';
-</style>
