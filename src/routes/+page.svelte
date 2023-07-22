@@ -16,11 +16,13 @@
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
-		Willkommen auf bei den Forsaken Ashbirds!
+		<p>Willkommen bei den Forsaken Ashbirds!</p>		
 	</h1>
 </section>
 
 <style lang="scss">
+	@import '../style/constants';
+
 	section {
 		display: flex;
 		flex-direction: column;
@@ -32,6 +34,11 @@
 	h1 {
 		width: 100%;
 		text-align: center;
+
+		p {
+			text-shadow: $box-shadow-main;
+			font-size: 2rem;
+		}
 	}
 
 

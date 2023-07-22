@@ -57,7 +57,7 @@
 	.aboutus {
 		display: flex;
 		flex-direction: column;
-		min-width: 50rem;
+		min-width: (100% - 2 * 2);
 	}
 
 </style>

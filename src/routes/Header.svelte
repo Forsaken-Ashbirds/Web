@@ -18,7 +18,7 @@
 				<a href="/">Home</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">Über uns</a>
+				<a href="/about">About</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/impressum' ? 'page' : undefined}>
 				<a href="/impressum">Impressum</a>
@@ -68,6 +68,7 @@
 		display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7);
+		height: 3em;
 	}
 
 	svg {
@@ -84,7 +85,7 @@
 		position: relative;
 		padding: 0;
 		margin: 0;
-		height: 3em;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
