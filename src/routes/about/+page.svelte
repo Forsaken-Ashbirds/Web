@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import TalkTab from '../../components/talkTab.svelte';
 	import { Direction } from '../../enums/direction.enum';
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import logo from '$lib/images/FrsaknAshbirds.svg';
 	import github from '$lib/images/github.svg';

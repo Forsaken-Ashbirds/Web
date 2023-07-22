@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import welcome from '$lib/images/FAB_HeaderWebsite.webp';
 	import welcome_fallback from '$lib/images/FAB_HeaderWebsite.png';
 </script>
