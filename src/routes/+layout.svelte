@@ -2,6 +2,7 @@
 	import Header from './Header.svelte';
 	import '../style/styles.scss';
 	import '../style/main.scss';
+
 </script>
 
 <div class="app">
@@ -12,8 +13,8 @@
 	</main>
 
 	<footer>
-		<p>
-			Besuche <a href="ts3server://forsaken-ashbirds">forsaken-ashbirds</a> um unserem TeamSpeak Sever
+		<p data-sveltekit-preload-data='off' >
+			Besuche <a href="https://ts.forsaken-ashbirds.de" target="_blank">forsaken-ashbirds</a> um unserem TeamSpeak Sever
 			beizutreten.
 		</p>
 		<span

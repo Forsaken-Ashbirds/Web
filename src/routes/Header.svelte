@@ -30,18 +30,23 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/JosunLP/ForsakenAshbirds">
+		<a href="https://github.com/JosunLP/ForsakenAshbirds" target="_blank">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
 </header>
 
 <style lang="scss">
+	@import '../style/constants';
 	header {
 		display: flex;
 		justify-content: space-between;
 		position: fixed;
 		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		position: fixed;
 	}
 
 	.corner {

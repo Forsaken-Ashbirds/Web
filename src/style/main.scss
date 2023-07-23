@@ -1,11 +1,59 @@
+@import 'fonts';
 @import 'constants';
+@import 'mixins/mixins';
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+
+	&-track {
+		background-color: $color-background-dark;
+	}
+
+	&-thumb {
+		background-color: $color-text-light;
+		border-radius: $border-radius;
+	}
+}
 
 .app {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	background-image: url('/Background.webp');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 	color: $color-text-light;
+
+	h1,
+	h2,
+	h3 {
+		font-family: $font-family-h;
+		margin: 0;
+		text-decoration: underline;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 4rem;
+		font-weight: bold;
+		text-decoration: underline;
+		padding-bottom: 3rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+		font-weight: bold;
+		padding-bottom: 2rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+		font-weight: bold;
+		padding-bottom: 1rem;
+	}
 }
 
 main {
@@ -16,30 +64,42 @@ main {
 	width: 100%;
 	max-width: 64rem;
 	margin: 0 auto;
-	margin-top: 2rem;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
 	box-sizing: border-box;
 }
 
 footer {
 	display: flex;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 12px;
+	background-color: $color-background-dark;
+	color: $color-text-light;
+	padding: 0.5rem;
 
-	p {
-		justify-content: center;
-		align-items: center;
+	p, span {
 		text-align: center;
+		padding: 0;
+		margin: 0;
 	}
 
 	a {
 		font-weight: bold;
 	}
-}
 
-@media (min-width: 480px) {
-	footer {
-		padding: 12px 0;
+	@include respond-to(handhelds) {
+		font-size: 0.8rem;
+	}
+
+	@include respond-to(medium-screens) {
+		font-size: 0.75rem;
+	}
+
+	@include respond-to(wide-screens) {
+		font-size: 0.9rem;
 	}
 }

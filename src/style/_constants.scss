@@ -1,3 +1,5 @@
+@import "fonts";
+
 $box-shadow-main: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 $box-shadow-none: none;
 $border-radius: 0.25rem;
@@ -9,3 +11,5 @@ $color-text-light: rgba(255, 255, 255, 0.75);
 $color-text-dark: rgba(70, 70, 70, 0.75);
 $color-text-link: rgb(0, 122, 255);
 $color-text-link-hover: rgb(0, 122, 255, 0.75);
+
+$font-family-h: "FracturaND", sans-serif;
