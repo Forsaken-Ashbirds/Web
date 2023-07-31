@@ -18,8 +18,7 @@
 	</main>
 
 	<footer>
-		<p>Besuche <a href="ts3server://forsaken-ashbirds" target="_blank" rel="noopener noreferrer"
-					  data-sveltekit-preload-data='off'>forsaken-ashbirds</a> um unserem TeamSpeak Sever
+		<p>Besuche <a href="ts3server://forsaken-ashbirds" target="_blank" rel="noopener noreferrer external">forsaken-ashbirds</a> um unserem TeamSpeak Sever
 			beizutreten.
 		</p>
 		<p>© {new Date().getFullYear().toString()} Forsaken Ashbirds |
