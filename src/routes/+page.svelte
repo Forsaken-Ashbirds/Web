@@ -1,5 +1,5 @@
 <script lang="ts">
-	import welcome from '$lib/images/FAB_HeaderWebsite.webp';
+	import welcome from '$lib/images/FAB_HeaderWebsite.svg';
 	import welcome_fallback from '$lib/images/FAB_HeaderWebsite.png';
 </script>
 
@@ -12,7 +12,8 @@
 	<h1>
 		<span class="welcome">
 			<picture>
-				<source srcset={welcome} type="image/webp" />
+				<source srcset={welcome} type="image/svg+xml" />
+				<source srcset={welcome_fallback} type="image/png" />
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
