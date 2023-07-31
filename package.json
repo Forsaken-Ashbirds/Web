@@ -2,6 +2,10 @@
 	"name": "forsakenashbirds",
 	"version": "0.0.1",
 	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https:\/\/github.com/Forsaken-Ashbirds/web"
+	},
 	"scripts": {
 		"build": "vite build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
