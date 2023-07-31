@@ -1,0 +1,9 @@
+
+[*]
+indent_size = tab
+tab_width = 4
+indent_style = tab
+end_of_line = lf
+charset = utf-8
+max_line_length = 120
+ij_html_space_inside_empty_tag = true
