@@ -14,9 +14,6 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest"
 	},
-	"dependencies": {
-		"sass": "^1.64.0"
-	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
 		"@neoconfetti/svelte": "^1.0.0",
@@ -31,6 +28,7 @@
 		"eslint-plugin-svelte": "^2.30.0",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
+		"sass": "^1.64.0",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
 		"tslib": "^2.4.1",
