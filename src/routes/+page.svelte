@@ -17,7 +17,7 @@
 			</picture>
 		</span>
 	</h1>
-	<h2>Willkommen bei den Forsaken Ashbirds!</h2>
+	<h2 data-aos="fade-up">Willkommen bei den Forsaken Ashbirds!</h2>
 </section>
 
 <style lang="scss">

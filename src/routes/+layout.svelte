@@ -2,6 +2,12 @@
 	import Header from './Header.svelte';
 	import '../style/styles.scss';
 	import '../style/main.scss';
+	import {onMount} from "svelte";
+	import AOS from "aos";
+
+	onMount(() => {
+		AOS.init();
+	})
 </script>
 
 <div class="app">
