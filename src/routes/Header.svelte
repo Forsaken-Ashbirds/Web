@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/FrsaknAshbirds.svg';
 	import github from '$lib/images/github.svg';
-	import { packageInfo } from '$app/environment';
+	import { PUBLIC_VERSION, PUBLIC_REPO_URL } from '$env/static/public';
 </script>
 
 <header>
@@ -31,7 +31,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href={packageInfo.repository.url} target="_blank" rel="noopener noreferrer external">
+		<a href={PUBLIC_REPO_URL} target="_blank" rel="noopener noreferrer external">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
