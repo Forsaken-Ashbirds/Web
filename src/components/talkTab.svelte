@@ -17,39 +17,30 @@
 		background: rgba(153, 153, 153, 0.74);
 		padding: 1rem;
 		margin: 1rem;
-		width: 70%;
-		border-radius: 0.5rem;
+		width: 65%;
+		text-align: center;
+		cursor: wait;
+		border-radius: 0.3rem;
 		box-shadow: $box-shadow-main;
 		transition: all 0.2s ease-in-out;
 		@include noSelect;
 	}
 
 	.leftSwipe {
-		margin-right: 1em;
-		margin-left: 0;
-		text-align: left;
-		float: left;
 		align-self: flex-start;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
 
 		&:hover {
-			background: rgba(153, 153, 153, 0.74);
-			transform: translateX(1.80em) scale(1.1);
+			background: rgba(105, 105, 105, 0.74);
+			transform: translateX(1.80em) scale(1.4);
 		}
 	}
 
 	.rightSwipe {
-		margin-left: 1em;
-		margin-right: 0;
-		text-align: right;
 		align-self: flex-end;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-		
+
 		&:hover {
-			background: rgba(153, 153, 153, 0.74);
-			transform: translateX(-1.80em) scale(1.1);
+			background: rgba(105, 105, 105, 0.74);
+			transform: translateX(-1.80em) scale(1.4);
 		}
 	}
 </style>

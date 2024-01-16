@@ -63,8 +63,6 @@
 		display: flex;
 		flex-direction: column;
 		min-width: (100% - 2 * 2);
-		border-left: 1px solid white;
-		border-right: 1px solid white;
 		padding-left: 0;
 		padding-right: 0;
 	}
