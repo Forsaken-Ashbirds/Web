@@ -25,3 +25,15 @@ jobs:
     - run: npm i
     - run: npm ci
     - run: npm run build --if-present
+  deploy:
+      if: github.event_name != 'pull_request'
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+      -   name: 📂 Sync files
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+          with:
+              server: ${{ secrets.SFTP_HOST }}
+              username: ${{ secrets.SFTP_USERNAME }}
+              password: ${{ secrets.SFTP_PASS }}
+              localDir: dist
