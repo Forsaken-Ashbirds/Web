@@ -47,4 +47,4 @@ jobs:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASS }}
-          local-dir: dist
+          local-dir: build/
