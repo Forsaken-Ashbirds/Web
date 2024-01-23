@@ -43,9 +43,15 @@ jobs:
           name: website-content
           path: ./build/
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: pressidium/lftp-mirror-action@v1
         with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASS }}
-          local-dir: ./build/
+          host: ${{ secrets.SFTP_HOST }}
+          user: ${{ secrets.SFTP_USERNAME }}
+          pass: ${{ secrets.SFTP_PASS }}
+          onlyNewer: true
+          settings: 'sftp:auto-confirm=yes'
+          localDir: './build/'
+          remoteDir: '/'
+          reverse: true
+          ignoreFile: '.lftp_ignore'
+          options: '--verbose'
