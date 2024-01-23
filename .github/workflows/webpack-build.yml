@@ -41,10 +41,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: website-content
+          path: ./build/
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASS }}
-          local-dir: build/
+          local-dir: ./build/
