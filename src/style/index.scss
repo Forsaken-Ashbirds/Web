@@ -1,7 +1,7 @@
 @use './constants';
 
-@import '~aos/dist/aos.css';
-@import '~@fontsource/fira-mono';
+@import '../../node_modules/aos/dist/aos.css';
+@import '../../node_modules/@fontsource/fira-mono';
 @import './fonts';
 
 :root {
