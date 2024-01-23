@@ -31,33 +31,7 @@
 	background-attachment: fixed;
 	color: $color-text-light;
 
-	h1,
-	h2,
-	h3 {
-		font-family: $font-family-h;
-		margin: 0;
-		text-decoration: underline;
-		text-align: center;
-	}
-
-	h1 {
-		font-size: 4rem;
-		font-weight: bold;
-		text-decoration: underline;
-		padding-bottom: 3rem;
-	}
-
-	h2 {
-		font-size: 3rem;
-		font-weight: bold;
-		padding-bottom: 2rem;
-	}
-
-	h3 {
-		font-size: 2rem;
-		font-weight: bold;
-		padding-bottom: 1rem;
-	}
+	@import "./fonts";
 }
 
 main {
