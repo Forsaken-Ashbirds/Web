@@ -9,8 +9,7 @@
 </div>
 
 <style lang="scss">
-	@import '../style/_constants.scss';
-	@import '../style/mixins/_mixins.scss';
+	@use '../style/_constants.scss';
 
 	.styleBox {
 		border: none;
@@ -21,9 +20,9 @@
 		text-align: center;
 		cursor: wait;
 		border-radius: 0.3rem;
-		box-shadow: $box-shadow-main;
+		box-shadow: constants.$box-shadow-main;
 		transition: all 0.2s ease-in-out;
-		@include noSelect;
+		user-select: none;
 	}
 
 	.leftSwipe {
