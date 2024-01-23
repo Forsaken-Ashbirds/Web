@@ -1,0 +1,27 @@
+@use '../constants';
+@use '../mixins/breakpoints';
+
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-image: image-set(
+		url('$lib/images/bg-image-sm.webp') 1x,
+		url('$lib/images/bg-image-lg.webp') 2x
+	);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 100%;
+	max-width: 64rem;
+	margin: 5rem auto;
+	box-sizing: border-box;
+}

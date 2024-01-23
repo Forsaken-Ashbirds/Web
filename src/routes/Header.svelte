@@ -41,8 +41,6 @@
 </header>
 
 <style lang="scss">
-	@import '../style/constants';
-
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -51,7 +49,6 @@
 		top: 0;
 		left: 0;
 		z-index: 100;
-		position: fixed;
 	}
 
 	.corner {

@@ -22,7 +22,7 @@
 </section>
 
 <style lang="scss">
-	@import '../style/constants';
+	@use "../style/constants";
 
 	section {
 		display: flex;
@@ -40,7 +40,7 @@
 	h2 {
 		font-family: 'Roboto', sans-serif;
 		text-decoration: none;
-		text-shadow: $box-shadow-main;
+		text-shadow: constants.$box-shadow-main;
 		font-size: 3rem;
 	}
 

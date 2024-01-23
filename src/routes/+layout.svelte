@@ -2,7 +2,8 @@
 	import { PUBLIC_VERSION } from '$env/static/public';
 	import Header from './Header.svelte';
 	import '../style/styles.scss';
-	import '../style/main.scss';
+	import '../style/components/main.scss';
+	import '../style/components/footer.scss';
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 

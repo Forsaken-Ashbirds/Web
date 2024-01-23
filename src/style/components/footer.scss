@@ -1,0 +1,37 @@
+@use '../constants';
+@use '../mixins/breakpoints';
+
+footer {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: constants.$color-background-dark;
+	padding: 0.5rem;
+
+	p,
+	span {
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		font-weight: bold;
+	}
+
+	@include breakpoints.respond-to(handhelds) {
+		font-size: 0.8rem;
+	}
+
+	@include breakpoints.respond-to(medium-screens) {
+		font-size: 0.75rem;
+	}
+
+	@include breakpoints.respond-to(wide-screens) {
+		font-size: 0.9rem;
+	}
+}

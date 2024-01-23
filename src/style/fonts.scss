@@ -1,11 +1,28 @@
 @use './mixins/fonts';
+@use './mixins/breakpoints';
 
 @font-face {
 	font-family: 'FracturaND';
 	src: url('$lib/fonts/FracturaND.ttf') format('truetype');
 }
 
-@media (width > 300px) {
+div {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+a {
+	color: rgb(0, 122, 255);
+
+	&:hover {
+		color: rgb(0, 122, 255, 0.75);
+	}
+
+	&:visited {
+		color: rgb(0, 83, 160);
+	}
+}
+
+@include breakpoints.respond-to-and-higher(handhelds) {
 	h1 {
 		@include fonts.useFractura();
 		margin: 0;
@@ -53,13 +70,13 @@
 	}
 }
 
-@media (width > 700px) {
+@include breakpoints.respond-to-and-higher(medium-screens) {
 	p {
 		margin-block-start: 12px;
 	}
 }
 
-@media (width > 1000px) {
+@include breakpoints.respond-to-and-higher(wide-screens) {
 	h1 {
 		font-size: 4rem;
 		margin-block-end: 3rem;
@@ -75,4 +92,8 @@
 	p {
 		margin-block-start: 16px;
 	}
+}
+
+.dark {
+	color: rgba(70, 70, 70, 0.75);
 }

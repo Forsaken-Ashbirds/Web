@@ -1,0 +1,38 @@
+@mixin respond-to($media) {
+	@if $media == watches {
+		@media (width < 20rem) {
+			@content;
+		}
+	} @else if $media == handhelds {
+		@media (20rem <= width < 40rem) {
+			@content;
+		}
+	} @else if $media == medium-screens {
+		@media (40rem <= width < 1000px) {
+			@content;
+		}
+	} @else if $media == wide-screens {
+		@media (width >= 1000px) {
+			@content;
+		}
+	}
+}
+
+@mixin respond-to-and-higher($media) {
+	@if $media == watches {
+		@content;
+	}
+	@if $media == handhelds {
+		@media (width >= 20rem) {
+			@content;
+		}
+	} @else if $media == medium-screens {
+		@media (width >= 40rem) {
+			@content;
+		}
+	} @else if $media == wide-screens {
+		@media (width >= 1000px) {
+			@content;
+		}
+	}
+}
