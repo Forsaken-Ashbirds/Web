@@ -1,3 +1,7 @@
+<script>
+	import {dev} from "$app/environment";
+</script>
+
 <svelte:head>
 	<title>Community</title>
 	<meta name="description" content="Community" />
@@ -5,7 +9,13 @@
 
 <div class="text-column">
 	<h1>Community</h1>
-	<h2>Coming soon...</h2>
+	{#if dev}
+		<h2>Erfahre mehr über unsere Projekte</h2>
+	{/if}
+	{#if !dev}
+		<h2>Under construction</h2>
+		<p>This page will be coming soon...</p>
+	{/if}
 </div>
 
 <style lang="scss">

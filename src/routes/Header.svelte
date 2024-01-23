@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/FrsaknAshbirds.svg';
 	import github from '$lib/images/github.svg';
-	import { PUBLIC_REPO_URL, PUBLIC_VERSION } from '$env/static/public';
+	import { PUBLIC_REPO_URL } from '$env/static/public';
 </script>
 
 <header>
