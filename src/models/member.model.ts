@@ -1,4 +1,4 @@
-import type MemberLink from "./memberLink.model";
+import type MemberLink from './memberLink.model';
 
 /**
  * Member model

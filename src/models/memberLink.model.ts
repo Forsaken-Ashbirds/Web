@@ -1,4 +1,4 @@
-import type { IconProp } from "@fortawesome/fontawesome-svg-core";
+import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export default class MemberLink {
 	public url: string;
@@ -41,7 +41,7 @@ export default class MemberLink {
 			case 'steamcommunity.com':
 				return ['fab', 'steam'];
 			default:
-				return ['fas', 'link'];		
+				return ['fas', 'link'];
 		}
 		return 'link';
 	}

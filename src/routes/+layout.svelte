@@ -15,7 +15,7 @@
 	}
 
 	// Interval einrichten, um die Zeit jede Sekunde zu aktualisieren
-	let interval: number = 0;
+	let interval: unknown;
 
 	onMount(() => {
 		AOS.init();
@@ -24,7 +24,7 @@
 
 		// Cleanup-Funktion
 		return () => {
-			clearInterval(interval);
+			clearInterval(interval as number);
 		};
 	});
 </script>
