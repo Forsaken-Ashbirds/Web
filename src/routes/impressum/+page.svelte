@@ -14,9 +14,7 @@
 	</p>
 
 	<h2>Kontakt</h2>
-	<p>
-		E-Mail: info@josunlp.de
-	</p>
+	<p>E-Mail: info@josunlp.de</p>
 
 	<p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
 </div>

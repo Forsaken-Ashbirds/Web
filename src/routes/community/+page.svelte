@@ -1,5 +1,5 @@
-<script>
-	import {dev} from "$app/environment";
+<script lang="ts">
+	import { dev } from '$app/environment';
 </script>
 
 <svelte:head>

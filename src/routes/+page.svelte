@@ -22,7 +22,7 @@
 </section>
 
 <style lang="scss">
-	@use "../style/constants";
+	@use '../style/constants';
 
 	section {
 		display: flex;
