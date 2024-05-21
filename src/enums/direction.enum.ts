@@ -1,4 +1,4 @@
 export enum Direction {
-	  Left = "leftSwipe",
-	  Right = "rightSwipe",
+	Left = 'leftSwipe',
+	Right = 'rightSwipe'
 }

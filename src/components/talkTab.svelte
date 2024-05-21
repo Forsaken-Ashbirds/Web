@@ -30,7 +30,7 @@
 
 		&:hover {
 			background: rgba(105, 105, 105, 0.74);
-			transform: translateX(1.80em) scale(1.4);
+			transform: translateX(1.8em) scale(1.4);
 		}
 	}
 
@@ -39,7 +39,7 @@
 
 		&:hover {
 			background: rgba(105, 105, 105, 0.74);
-			transform: translateX(-1.80em) scale(1.4);
+			transform: translateX(-1.8em) scale(1.4);
 		}
 	}
 </style>
