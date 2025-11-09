@@ -1,30 +1,41 @@
 <script lang="ts">
 	import { PUBLIC_VERSION } from '$env/static/public';
-	import Header from './Header.svelte';
-	import '../style/index.scss';
-	import '../style/components/main.scss';
-	import '../style/components/footer.scss';
-	import { onMount } from 'svelte';
+	import { locale as localeStore, translate } from '$lib/i18n';
+	import { ClockService, formatTime } from '$lib/time/clock.service';
 	import AOS from 'aos';
+	import { onMount } from 'svelte';
+	import '../style/components/footer.scss';
+	import '../style/components/main.scss';
+	import '../style/index.scss';
+	import Header from './Header.svelte';
 
-	let currentTime = new Date();
+	const clockService = new ClockService();
+	const currentYear = new Date().getFullYear().toString();
 
-	// Funktion, um die Zeit zu aktualisieren
-	function updateTime() {
-		currentTime = new Date();
-	}
+	const footerTeamspeakPrefix = translate('footer.teamspeak.prefix');
+	const footerTeamspeakSuffix = translate('footer.teamspeak.suffix');
+	const footerTeamspeakLinkLabel = translate('footer.teamspeak.linkLabel');
+	const footerCopy = translate('footer.copy', { year: currentYear });
+	const footerImprintLabel = translate('footer.imprintLinkLabel');
+	const footerVersionLabel = translate('footer.version', { version: PUBLIC_VERSION });
+	const footerClockAriaLabel = translate('footer.clockAriaLabel');
 
-	// Interval einrichten, um die Zeit jede Sekunde zu aktualisieren
-	let interval: unknown;
+	let currentTime = formatTime(new Date());
 
 	onMount(() => {
 		AOS.init();
 
-		interval = setInterval(updateTime, 1000);
+		const clockSubscription = clockService.createClock().subscribe((time) => {
+			currentTime = formatTime(time);
+		});
 
-		// Cleanup-Funktion
+		const localeSubscription = localeStore.subscribe((value) => {
+			document.documentElement.lang = value;
+		});
+
 		return () => {
-			clearInterval(interval as number);
+			clockSubscription();
+			localeSubscription();
 		};
 	});
 </script>
@@ -38,28 +49,25 @@
 
 	<footer>
 		<p>
-			Besuche <a
+			{$footerTeamspeakPrefix}
+			{' '}
+			<a
 				href="ts3server://forsaken-ashbirds"
 				target="_blank"
-				rel="noopener noreferrer external">forsaken-ashbirds</a
+				rel="noopener noreferrer external"
 			>
-			um unserem TeamSpeak Sever beizutreten.
+				{$footerTeamspeakLinkLabel}
+			</a>
+			{' '}
+			{$footerTeamspeakSuffix}
 		</p>
 		<p>
-			© {new Date().getFullYear().toString()} Forsaken Ashbirds |
-			<a href="/impressum">Impressum</a>
+			{$footerCopy}
+			<a href="/impressum">{$footerImprintLabel}</a>
 		</p>
 		<ul id="meta-info" style="display: none">
-			<li>Version: {PUBLIC_VERSION}</li>
+			<li>{$footerVersionLabel}</li>
 		</ul>
-		<p>
-			{currentTime.getHours().toString().length < 2
-				? '0' + currentTime.getHours()
-				: currentTime.getHours()}:{currentTime.getMinutes().toString().length < 2
-				? '0' + currentTime.getMinutes()
-				: currentTime.getMinutes()}:{currentTime.getSeconds().toString().length < 2
-				? '0' + currentTime.getSeconds()
-				: currentTime.getSeconds()}
-		</p>
+		<p aria-label={$footerClockAriaLabel}>{currentTime}</p>
 	</footer>
 </div>

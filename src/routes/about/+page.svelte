@@ -1,53 +1,34 @@
 <script lang="ts">
+	import { locale as localeStore, translate, type Locale } from '$lib/i18n';
 	import TalkTab from '../../components/talkTab.svelte';
-	import { Direction } from '../../enums/direction.enum';
+	import aboutMessages from '../../data/about';
+
+	const pageTitle = translate('about.meta.title');
+	const pageDescription = translate('about.meta.description');
+	const heading = translate('about.heading');
+
+	let currentLocale: Locale = $localeStore;
+
+	$: currentLocale = $localeStore;
 </script>
 
 <svelte:head>
-	<title>Über uns</title>
-	<meta name="description" content="About this app" />
+	<title>{$pageTitle}</title>
+	<meta name="description" content={$pageDescription} />
 </svelte:head>
 
 <div class="text-column">
-	<h1>Über uns</h1>
+	<h1>{$heading}</h1>
 
 	<div class="aboutus">
-		<TalkTab direction={Direction.Left}>
-			Herzlich willkommen bei den Forsaken Ashbirds! Wir sind ein lebendiger Gaming-Clan, der
-			sich durch die gemeinsame Leidenschaft für aufregende Abenteuer und unvergessliche
-			Spielerlebnisse vereint.
-			<br />
-			<br />
-			Mit einer beeindruckenden Geschichte der Kameradschaft und Exzellenz ziehen wir durch verschiedene
-			virtuelle Welten und hinterlassen unsere Spuren auf jedem Schlachtfeld, das wir betreten.
-		</TalkTab>
-
-		<TalkTab direction={Direction.Right}>
-			Unser Geist des Wettbewerbs, der Teamarbeit und der Innovation treibt uns dazu an, eine
-			einladende und mitreißende Gemeinschaft für Spieler aller Hintergründe zu schaffen.
-			<br />
-			<br />
-			Egal, ob wir fantastische Reiche erobern, in intensiven PvP-Kämpfen unsere Gegner herausfordern
-			oder uns in fesselnde Geschichten vertiefen, die Forsaken Ashbirds streben immer danach,
-			uns zu verbessern und den Sieg zu erringen.
-		</TalkTab>
-
-		<TalkTab direction={Direction.Left}>
-			Wir laden euch herzlich ein, sich uns anzuschließen und das Potenzial einer vereinten
-			Spielgemeinschaft zu entdecken, in der Freundschaften geschmiedet, Fähigkeiten
-			verfeinert und unvergessliche Erinnerungen geschaffen werden.<br />
-			<br /> Gemeinsam werden wir die Grenzen der virtuellen Welt überwinden und ein Vermächtnis
-			schaffen, das noch Generationen in Erinnerung behalten werden. Werde Teil der Forsaken Ashbirds
-			und erlebe Gaming auf einer neuen, entspannten Ebene.
-		</TalkTab>
-
-		<TalkTab direction={Direction.Right}>
-			Unsere Community ist für alle Spieler ab 18 Jahren offen. Wir sind ein deutsch/englisch
-			sprachiger Clan, aber auch Spieler aus anderen Ländern sind bei uns herzlich willkommen.
-			Wir sind ein Community-Clan, der sich auf das gemeinsame Spielen konzentriert.<br />
-			<br /> Wir sind keine professionelle E-Sport-Organisation und haben auch nicht vor, eine
-			zu werden. Wir sind ein Clan, der sich auf das gemeinsame Spielen konzentriert.
-		</TalkTab>
+		{#each aboutMessages as message (message.id)}
+			{@const paragraphs = message.getParagraphs(currentLocale)}
+			<TalkTab direction={message.direction}>
+				{#each paragraphs as paragraph, index (index)}
+					<p>{paragraph}</p>
+				{/each}
+			</TalkTab>
+		{/each}
 	</div>
 </div>
 

@@ -1,11 +1,17 @@
 <script lang="ts">
-	import welcome from '$lib/images/FAB_HeaderWebsite.svg';
+	import { translate } from '$lib/i18n';
 	import welcome_fallback from '$lib/images/FAB_HeaderWebsite.png';
+	import welcome from '$lib/images/FAB_HeaderWebsite.svg';
+
+	const pageTitle = translate('home.meta.title');
+	const pageDescription = translate('home.meta.description');
+	const heroHeading = translate('home.heading');
+	const heroSubtitle = translate('home.hero.subtitle');
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>{$pageTitle}</title>
+	<meta name="description" content={$pageDescription} />
 </svelte:head>
 
 <section>
@@ -18,7 +24,8 @@
 			</picture>
 		</span>
 	</h1>
-	<h2 data-aos="fade-up">Willkommen bei den Forsaken Ashbirds!</h2>
+	<h2 data-aos="fade-up">{$heroHeading}</h2>
+	<p class="subtitle" data-aos="fade-up" data-aos-delay="100">{$heroSubtitle}</p>
 </section>
 
 <style lang="scss">
@@ -42,6 +49,13 @@
 		text-decoration: none;
 		text-shadow: constants.$box-shadow-main;
 		font-size: 3rem;
+	}
+
+	.subtitle {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.5rem;
+		margin-top: 1rem;
+		text-align: center;
 	}
 
 	.welcome {
