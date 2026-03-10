@@ -1,5 +1,5 @@
 <script lang="ts">
-	import welcome from '$lib/images/FAB_HeaderWebsite.svg';
+	import welcomeSvg from '$lib/images/FAB_HeaderWebsite.svg';
 	import welcomeFallback from '$lib/images/FAB_HeaderWebsite.png';
 
 	const highlights = [
@@ -44,7 +44,7 @@
 	<div class="hero-visual" data-aos="zoom-in">
 		<div class="welcome">
 			<picture>
-				<source srcset={welcome} type="image/svg+xml" />
+				<source srcset={welcomeSvg} type="image/svg+xml" />
 				<source srcset={welcomeFallback} type="image/png" />
 				<img src={welcomeFallback} alt="Forsaken Ashbirds Banner" />
 			</picture>

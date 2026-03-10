@@ -9,6 +9,8 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
         steps:
             - uses: actions/checkout@v4
               with:
@@ -34,6 +36,8 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         environment: web-production
+        permissions:
+            contents: read
         steps:
             - name: Download build artifacts
               uses: actions/download-artifact@v4

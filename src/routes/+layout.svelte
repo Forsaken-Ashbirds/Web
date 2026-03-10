@@ -20,7 +20,7 @@
 	}
 
 	// Interval einrichten, um die Zeit jede Sekunde zu aktualisieren
-	let interval: ReturnType<typeof setInterval> | undefined;
+	let interval: ReturnType<typeof setInterval> | undefined = undefined;
 
 	onMount(() => {
 		AOS.init();
