@@ -24,7 +24,7 @@ jobs:
             - name: Install JS dependencies
               run: bun install --frozen-lockfile
             - name: Vite build
-              run: bun run build --if-present
+              run: bun run build
             - name: Store build artifacts for deployment
               uses: actions/upload-artifact@v4
               with:
