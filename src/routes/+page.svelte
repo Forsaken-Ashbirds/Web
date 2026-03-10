@@ -26,10 +26,12 @@
 	/>
 </svelte:head>
 
-<section class="hero">
+<section class="hero" data-testid="home-hero">
 	<div class="hero-copy" data-aos="fade-up">
 		<p class="eyebrow">Star Citizen · Trading · Mining · Bounty Hunting</p>
-		<h1>Gemeinsam fliegen. Gelassen spielen. Als Community wachsen.</h1>
+		<h1 data-testid="home-hero-title">
+			Gemeinsam fliegen. Gelassen spielen. Als Community wachsen.
+		</h1>
 		<p class="page-intro">
 			Die Forsaken Ashbirds verbinden ambitionierte Ingame-Ziele mit einer lockeren,
 			erwachsenen Atmosphäre. Wir erleben Abenteuer zusammen, unterstützen uns gegenseitig und

@@ -31,14 +31,14 @@
 
 <div class="text-column">
 	<p class="eyebrow">Mitmachen & ankommen</p>
-	<h1>Community</h1>
+	<h1 data-testid="community-page-title">Community</h1>
 	<p class="page-intro">
 		Unsere Community verbindet Abenteuer, Wachstum und Kameradschaft. Wir wollen gemeinsam etwas
 		erleben, voneinander lernen und eine Atmosphäre schaffen, in der man gern Teil des Teams
 		wird.
 	</p>
 
-	<section class="info-grid" aria-label="Community Highlights">
+	<section class="info-grid" aria-label="Community Highlights" data-testid="community-highlights">
 		{#each highlights as highlight}
 			<article class="info-card">
 				<h2>{highlight.title}</h2>

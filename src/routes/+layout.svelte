@@ -7,7 +7,7 @@
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 
-	let currentTime = new Date();
+	let currentTime: Date | undefined = undefined;
 	const timeFormatter = new Intl.DateTimeFormat('de-DE', {
 		hour: '2-digit',
 		minute: '2-digit',
@@ -25,6 +25,7 @@
 	onMount(() => {
 		AOS.init();
 
+		updateTime();
 		interval = setInterval(updateTime, 1000);
 
 		// Cleanup-Funktion
@@ -59,8 +60,10 @@
 		<ul id="meta-info" style="display: none">
 			<li>Version: {PUBLIC_VERSION}</li>
 		</ul>
-		<p class="footer-clock" aria-label="Aktuelle Uhrzeit">
-			{timeFormatter.format(currentTime)}
-		</p>
+		{#if currentTime}
+			<p class="footer-clock" aria-label="Aktuelle Uhrzeit">
+				{timeFormatter.format(currentTime)}
+			</p>
+		{/if}
 	</footer>
 </div>

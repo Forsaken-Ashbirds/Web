@@ -17,7 +17,7 @@
 		"preview": "vite preview",
 		"test": "bun run test:integration && bun run test:unit",
 		"test:integration": "playwright test",
-		"test:unit": "vitest --passWithNoTests",
+		"test:unit": "vitest run",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},

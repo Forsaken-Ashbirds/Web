@@ -7,7 +7,7 @@
 
 <header>
 	<div class="corner">
-		<a href="./" aria-label="Zur Startseite">
+		<a href="/" aria-label="Zur Startseite">
 			<img src={logo} alt="Logo der Forsaken Ashbirds" />
 		</a>
 	</div>
