@@ -3,14 +3,17 @@
 
 footer {
 	display: flex;
-	position: fixed;
+	position: relative;
+	z-index: 1;
 	width: 100%;
-	bottom: 0;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: constants.$color-background-dark;
-	padding: 0.5rem;
+	gap: 0.5rem;
+	background: rgba(6, 10, 17, 0.92);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 1rem;
+	backdrop-filter: blur(14px);
 
 	p,
 	span {
@@ -21,6 +24,17 @@ footer {
 
 	a {
 		font-weight: bold;
+	}
+
+	.footer-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.footer-clock {
+		color: rgba(255, 255, 255, 0.7);
+		letter-spacing: 0.08em;
 	}
 
 	@include breakpoints.respond-to(handhelds) {

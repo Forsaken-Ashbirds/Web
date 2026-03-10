@@ -5,19 +5,26 @@
 @import './fonts';
 
 :root {
-	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+	--font-body: Inter, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
+	--color-bg-0: #05070d;
+	--color-bg-1: #0c1220;
+	--color-bg-2: #141d2d;
+	--color-theme-1: #ffa726;
+	--color-theme-2: #7dd3fc;
+	--color-text: rgba(236, 243, 251, 0.88);
+	--color-heading: #f8fafc;
+	--color-muted: rgba(226, 232, 240, 0.72);
+	--color-surface: rgba(9, 14, 24, 0.76);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
 	color: var(--color-text);
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
@@ -27,11 +34,12 @@ body {
 	background-color: var(--color-bg-1);
 	background-size: 100vw 100vh;
 	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.75) 0%,
+			40% 40% at 50% 20%,
+			rgba(125, 211, 252, 0.18) 0%,
 			rgba(255, 255, 255, 0) 100%
 		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+		radial-gradient(30% 35% at 80% 10%, rgba(255, 167, 38, 0.18) 0%, transparent 100%),
+		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 35%, var(--color-bg-2) 100%);
 }
 
 a {
@@ -41,6 +49,18 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--color-heading);
+	line-height: 1.1;
+	margin: 0;
+}
+
+p {
+	line-height: 1.7;
 }
 
 pre {
@@ -56,11 +76,13 @@ pre {
 
 .text-column {
 	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
+	max-width: 70rem;
+	width: 100%;
+	flex: 1;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	margin: 0 auto;
+	gap: 1.5rem;
 }
 
 input,
@@ -75,8 +97,98 @@ button:focus:not(:focus-visible) {
 
 @media (min-width: 720px) {
 	h1 {
-		font-size: 2.4rem;
+		font-size: clamp(2.75rem, 4vw, 4.5rem);
 	}
+
+	h2 {
+		font-size: clamp(1.4rem, 2vw, 2rem);
+	}
+}
+
+.eyebrow {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-theme-2);
+}
+
+.page-intro {
+	max-width: 48rem;
+	margin: 0;
+	font-size: clamp(1rem, 2vw, 1.15rem);
+	color: var(--color-muted);
+}
+
+.button-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.cta-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.85rem 1.3rem;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--color-theme-1), #ffb74d);
+	color: #0b1120;
+	font-weight: 700;
+	box-shadow: 0 0.9rem 2rem rgba(255, 167, 38, 0.24);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.cta-button.secondary {
+	background: rgba(255, 255, 255, 0.06);
+	color: var(--color-heading);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow: none;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+	transform: translateY(-2px);
+	text-decoration: none;
+	filter: brightness(1.05);
+}
+
+.info-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	width: 100%;
+}
+
+.info-card {
+	padding: 1.25rem;
+	border-radius: constants.$border-radius;
+	background: linear-gradient(180deg, rgba(18, 24, 36, 0.88), rgba(9, 14, 24, 0.72));
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: constants.$box-shadow-main;
+	backdrop-filter: blur(16px);
+
+	h2,
+	h3,
+	p {
+		margin: 0;
+	}
+
+	p + p,
+	h2 + p,
+	h3 + p {
+		margin-top: 0.75rem;
+	}
+}
+
+.steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 .visually-hidden {

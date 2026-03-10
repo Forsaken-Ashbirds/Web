@@ -8,6 +8,11 @@
 	import AOS from 'aos';
 
 	let currentTime = new Date();
+	const timeFormatter = new Intl.DateTimeFormat('de-DE', {
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit'
+	});
 
 	// Funktion, um die Zeit zu aktualisieren
 	function updateTime() {
@@ -15,7 +20,7 @@
 	}
 
 	// Interval einrichten, um die Zeit jede Sekunde zu aktualisieren
-	let interval: number = 0;
+	let interval: ReturnType<typeof setInterval> | undefined;
 
 	onMount(() => {
 		AOS.init();
@@ -37,29 +42,25 @@
 	</main>
 
 	<footer>
-		<p>
-			Besuche <a
-				href="ts3server://forsaken-ashbirds"
-				target="_blank"
-				rel="noopener noreferrer external">forsaken-ashbirds</a
-			>
-			um unserem TeamSpeak Sever beizutreten.
-		</p>
-		<p>
-			© {new Date().getFullYear().toString()} Forsaken Ashbirds |
-			<a href="/impressum">Impressum</a>
-		</p>
+		<div class="footer-content">
+			<p>
+				Besuche <a
+					href="ts3server://forsaken-ashbirds"
+					target="_blank"
+					rel="noopener noreferrer external">forsaken-ashbirds</a
+				>
+				um unserem TeamSpeak Server beizutreten.
+			</p>
+			<p>
+				© {new Date().getFullYear().toString()} Forsaken Ashbirds |
+				<a href="/impressum">Impressum</a>
+			</p>
+		</div>
 		<ul id="meta-info" style="display: none">
 			<li>Version: {PUBLIC_VERSION}</li>
 		</ul>
-		<p>
-			{currentTime.getHours().toString().length < 2
-				? '0' + currentTime.getHours()
-				: currentTime.getHours()}:{currentTime.getMinutes().toString().length < 2
-				? '0' + currentTime.getMinutes()
-				: currentTime.getMinutes()}:{currentTime.getSeconds().toString().length < 2
-				? '0' + currentTime.getSeconds()
-				: currentTime.getSeconds()}
+		<p class="footer-clock" aria-label="Aktuelle Uhrzeit">
+			{timeFormatter.format(currentTime)}
 		</p>
 	</footer>
 </div>
