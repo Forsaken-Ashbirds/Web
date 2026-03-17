@@ -9,8 +9,6 @@
 </div>
 
 <style lang="scss">
-	@use '../style/_constants.scss';
-
 	.styleBox {
 		border: 1px solid rgba(255, 255, 255, 0.12);
 		background: linear-gradient(180deg, rgba(20, 26, 37, 0.94) 0%, rgba(16, 21, 30, 0.82) 100%);
